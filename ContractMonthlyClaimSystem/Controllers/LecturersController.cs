@@ -54,8 +54,12 @@ namespace ContractMonthlyClaimSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserName,FirstName,LastName,Phone,Email,Country,DateOfBirth,Address,Department,Designation,CreatedById,CreatedOn,ModifiedById,ModifiedOn")] Lecturers lecturers)
+        public async Task<IActionResult> Create(Lecturers lecturers)
         {
+            lecturers.CreatedById = "Kamogelo";
+            lecturers.CreatedOn = DateTime.Now;
+            lecturers.ModifiedById = "Kamogelo";
+            lecturers.ModifiedOn = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(lecturers);
