@@ -22,6 +22,8 @@ namespace ContractMonthlyClaimSystem.Data
         public DbSet<SystemCode> SystemCodes { get; set; }
 
         public DbSet<SystemCodeDetail> SystemCodesDetails { get; set; }
+
+        public DbSet<ClaimType> ClaimTypes { get; set; }
              
     }
 }

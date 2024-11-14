@@ -2,7 +2,7 @@
 
 namespace ContractMonthlyClaimSystem.Models
 {
-    public class SystemCode
+    public class SystemCode: UserActivity
     {
         [Key]
         
