@@ -14,5 +14,7 @@ namespace ContractMonthlyClaimSystem.Data
         public DbSet<Lecturers> Lecturer { get; set; }
 
         public DbSet<Department> Departments { get; set; }
+
+        public DbSet<Designation> Designations { get; set; }
     }
 }
