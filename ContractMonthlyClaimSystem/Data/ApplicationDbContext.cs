@@ -26,6 +26,8 @@ namespace ContractMonthlyClaimSystem.Data
         public DbSet<ClaimType> ClaimTypes { get; set; }
 
         public DbSet<Country> Countries { get; set; }
+
+        public DbSet<City> Cities { get; set; }
              
     }
 }
