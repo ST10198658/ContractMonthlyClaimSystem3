@@ -48,7 +48,7 @@ namespace ContractMonthlyClaimSystem.Controllers
         // GET: Cities/Create
         public IActionResult Create()
         {
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Id");
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name");
             return View();
         }
 
@@ -57,15 +57,14 @@ namespace ContractMonthlyClaimSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Code,Name,CountryId,CreatedById,CreatedOn,ModifiedById,ModifiedOn")] City city)
+        public async Task<IActionResult> Create(City city)
         {
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(city);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Id", city.CountryId);
+            
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Nane", city.CountryId);
             return View(city);
         }
 
